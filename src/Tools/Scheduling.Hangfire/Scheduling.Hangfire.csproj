@@ -12,7 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <Folder Include="Persistence\Jobs\" />
+    <Folder Include="Persistence\JobItems\" />
   </ItemGroup>
 
 </Project>
