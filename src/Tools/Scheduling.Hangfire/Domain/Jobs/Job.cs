@@ -23,7 +23,7 @@ namespace Scheduling.Hangfire.Domain.Jobs
 
 		public void StopJob()
 		{
-			Apply(new JobStarted(Id, DateTime.Now));
+			Apply(new JobStopped(Id, DateTime.Now));
 		}
 
 		public void FinishJob()
