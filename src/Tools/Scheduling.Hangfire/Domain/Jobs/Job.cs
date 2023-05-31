@@ -11,9 +11,9 @@ namespace Scheduling.Domain.Domain.Jobs
 		// for impedence mismatch
 		private Job() { }
 
-		public Job(long id, Name name, JobType JobType)
+		public Job(long id, Name name, JobType JobType, Payload payload, SchedulerId schedulerId)
 		{
-			Apply(new JobCreated(id, name.Value, JobType.Value));
+			Apply(new JobCreated(id, name.Value, JobType.Value, payload.Json, schedulerId.Value));
 		}
 
 		public void StartJob()
@@ -41,6 +41,8 @@ namespace Scheduling.Domain.Domain.Jobs
 					Name = new Name(e.Name);
 					JobType = new JobType(e.JobType);
 					State = new State(JobState.Queued);
+					Payload = new Payload(e.Payload);
+					SchedulerId = new SchedulerId(e.SchedulerId);
 					break;
 
 				case JobStarted e:
@@ -66,10 +68,16 @@ namespace Scheduling.Domain.Domain.Jobs
 				throw new InvalidEntityStateException(this, "Id cannot be empty");
 
 			if (Name == null || string.IsNullOrWhiteSpace(Name))
-				throw new InvalidEntityStateException(this, "Name cannot be empty");
+				throw new InvalidEntityStateException(this, "Name cannot be null");
 
 			if (JobType == null || JobType == default)
-				throw new InvalidEntityStateException(this, "JobType cannot be empty");
+				throw new InvalidEntityStateException(this, "JobType cannot be null");
+
+			if (Payload == null)
+				throw new InvalidEntityStateException(this, "Payload cannot be null");
+
+			if (SchedulerId == null)
+				throw new InvalidEntityStateException(this, "SchedulerId cannot be null");
 
 			switch (State.JobState)
 			{
@@ -94,12 +102,18 @@ namespace Scheduling.Domain.Domain.Jobs
 
 		public Name Name { get; private set; }
 
+		public Payload Payload { get; private set; }
+
 		public State State { get; private set; }
+
+		public OutputList OutputList { get; private set; }
 
 		public StartedOn? StartedOn { get; private set; }
 
 		public StoppedOn? StoppedOn { get; private set; }
 
 		public FinishedOn? FinishedOn { get; private set; }
+
+		public SchedulerId? SchedulerId { get; private set; }
 	}
 }

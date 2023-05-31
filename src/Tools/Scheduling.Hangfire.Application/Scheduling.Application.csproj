@@ -10,8 +10,4 @@
     <ProjectReference Include="..\Scheduling.Hangfire\Scheduling.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Jobs\IServices\" />
-  </ItemGroup>
-
 </Project>

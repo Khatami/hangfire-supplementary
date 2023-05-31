@@ -8,9 +8,9 @@ using Scheduling.Infrastructure.Persistence;
 
 #nullable disable
 
-namespace Scheduling.Hangfire.Persistence.Migrations
+namespace Scheduling.Infrastructure.Persistence.Migrations
 {
-	[DbContext(typeof(HangfireDbContext))]
+    [DbContext(typeof(HangfireDbContext))]
     partial class HangfireDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -22,7 +22,7 @@ namespace Scheduling.Hangfire.Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Scheduling.Hangfire.Domain.JobItems.JobItem", b =>
+            modelBuilder.Entity("Scheduling.Domain.Domain.JobItems.JobItem", b =>
                 {
                     b.Property<long>("Id")
                         .HasColumnType("bigint");
@@ -32,7 +32,7 @@ namespace Scheduling.Hangfire.Persistence.Migrations
                     b.ToTable("JobItem", "scheduling");
                 });
 
-            modelBuilder.Entity("Scheduling.Hangfire.Domain.Jobs.Job", b =>
+            modelBuilder.Entity("Scheduling.Domain.Domain.Jobs.Job", b =>
                 {
                     b.Property<long>("Id")
                         .HasColumnType("bigint");
@@ -42,9 +42,9 @@ namespace Scheduling.Hangfire.Persistence.Migrations
                     b.ToTable("Job", "scheduling");
                 });
 
-            modelBuilder.Entity("Scheduling.Hangfire.Domain.JobItems.JobItem", b =>
+            modelBuilder.Entity("Scheduling.Domain.Domain.JobItems.JobItem", b =>
                 {
-                    b.OwnsOne("Scheduling.Hangfire.Domain.JobItems.ValueObjects.FinishedOn", "FinishedOn", b1 =>
+                    b.OwnsOne("Scheduling.Domain.Domain.JobItems.ValueObjects.FinishedOn", "FinishedOn", b1 =>
                         {
                             b1.Property<long>("JobItemId")
                                 .HasColumnType("bigint");
@@ -61,7 +61,7 @@ namespace Scheduling.Hangfire.Persistence.Migrations
                                 .HasForeignKey("JobItemId");
                         });
 
-                    b.OwnsOne("Scheduling.Hangfire.Domain.JobItems.ValueObjects.JobId", "JobId", b1 =>
+                    b.OwnsOne("Scheduling.Domain.Domain.JobItems.ValueObjects.JobId", "JobId", b1 =>
                         {
                             b1.Property<long>("JobItemId")
                                 .HasColumnType("bigint");
@@ -78,7 +78,7 @@ namespace Scheduling.Hangfire.Persistence.Migrations
                                 .HasForeignKey("JobItemId");
                         });
 
-                    b.OwnsOne("Scheduling.Hangfire.Domain.JobItems.ValueObjects.OutputList", "OutputList", b1 =>
+                    b.OwnsOne("Scheduling.Domain.Domain.JobItems.ValueObjects.OutputList", "OutputList", b1 =>
                         {
                             b1.Property<long>("JobItemId")
                                 .HasColumnType("bigint");
@@ -96,7 +96,7 @@ namespace Scheduling.Hangfire.Persistence.Migrations
                                 .HasForeignKey("JobItemId");
                         });
 
-                    b.OwnsOne("Scheduling.Hangfire.Domain.JobItems.ValueObjects.Payload", "Payload", b1 =>
+                    b.OwnsOne("Scheduling.Domain.Domain.JobItems.ValueObjects.Payload", "Payload", b1 =>
                         {
                             b1.Property<long>("JobItemId")
                                 .HasColumnType("bigint");
@@ -114,7 +114,7 @@ namespace Scheduling.Hangfire.Persistence.Migrations
                                 .HasForeignKey("JobItemId");
                         });
 
-                    b.OwnsOne("Scheduling.Hangfire.Domain.JobItems.ValueObjects.SchedulerId", "SchedulerId", b1 =>
+                    b.OwnsOne("Scheduling.Domain.Domain.JobItems.ValueObjects.SchedulerId", "SchedulerId", b1 =>
                         {
                             b1.Property<long>("JobItemId")
                                 .HasColumnType("bigint");
@@ -131,7 +131,7 @@ namespace Scheduling.Hangfire.Persistence.Migrations
                                 .HasForeignKey("JobItemId");
                         });
 
-                    b.OwnsOne("Scheduling.Hangfire.Domain.JobItems.ValueObjects.StartedOn", "StartedOn", b1 =>
+                    b.OwnsOne("Scheduling.Domain.Domain.JobItems.ValueObjects.StartedOn", "StartedOn", b1 =>
                         {
                             b1.Property<long>("JobItemId")
                                 .HasColumnType("bigint");
@@ -148,7 +148,7 @@ namespace Scheduling.Hangfire.Persistence.Migrations
                                 .HasForeignKey("JobItemId");
                         });
 
-                    b.OwnsOne("Scheduling.Hangfire.Domain.JobItems.ValueObjects.State", "State", b1 =>
+                    b.OwnsOne("Scheduling.Domain.Domain.JobItems.ValueObjects.State", "State", b1 =>
                         {
                             b1.Property<long>("JobItemId")
                                 .HasColumnType("bigint");
@@ -165,7 +165,7 @@ namespace Scheduling.Hangfire.Persistence.Migrations
                                 .HasForeignKey("JobItemId");
                         });
 
-                    b.OwnsOne("Scheduling.Hangfire.Domain.JobItems.ValueObjects.StoppedOn", "StoppedOn", b1 =>
+                    b.OwnsOne("Scheduling.Domain.Domain.JobItems.ValueObjects.StoppedOn", "StoppedOn", b1 =>
                         {
                             b1.Property<long>("JobItemId")
                                 .HasColumnType("bigint");
@@ -203,9 +203,9 @@ namespace Scheduling.Hangfire.Persistence.Migrations
                     b.Navigation("StoppedOn");
                 });
 
-            modelBuilder.Entity("Scheduling.Hangfire.Domain.Jobs.Job", b =>
+            modelBuilder.Entity("Scheduling.Domain.Domain.Jobs.Job", b =>
                 {
-                    b.OwnsOne("Scheduling.Hangfire.Domain.Jobs.ValueObjects.FinishedOn", "FinishedOn", b1 =>
+                    b.OwnsOne("Scheduling.Domain.Domain.Jobs.ValueObjects.FinishedOn", "FinishedOn", b1 =>
                         {
                             b1.Property<long>("JobId")
                                 .HasColumnType("bigint");
@@ -222,7 +222,7 @@ namespace Scheduling.Hangfire.Persistence.Migrations
                                 .HasForeignKey("JobId");
                         });
 
-                    b.OwnsOne("Scheduling.Hangfire.Domain.Jobs.ValueObjects.JobType", "JobType", b1 =>
+                    b.OwnsOne("Scheduling.Domain.Domain.Jobs.ValueObjects.JobType", "JobType", b1 =>
                         {
                             b1.Property<long>("JobId")
                                 .HasColumnType("bigint");
@@ -239,7 +239,7 @@ namespace Scheduling.Hangfire.Persistence.Migrations
                                 .HasForeignKey("JobId");
                         });
 
-                    b.OwnsOne("Scheduling.Hangfire.Domain.Jobs.ValueObjects.Name", "Name", b1 =>
+                    b.OwnsOne("Scheduling.Domain.Domain.Jobs.ValueObjects.Name", "Name", b1 =>
                         {
                             b1.Property<long>("JobId")
                                 .HasColumnType("bigint");
@@ -258,7 +258,62 @@ namespace Scheduling.Hangfire.Persistence.Migrations
                                 .HasForeignKey("JobId");
                         });
 
-                    b.OwnsOne("Scheduling.Hangfire.Domain.Jobs.ValueObjects.StartedOn", "StartedOn", b1 =>
+                    b.OwnsOne("Scheduling.Domain.Domain.Jobs.ValueObjects.OutputList", "OutputList", b1 =>
+                        {
+                            b1.Property<long>("JobId")
+                                .HasColumnType("bigint");
+
+                            b1.Property<string>("Json")
+                                .IsRequired()
+                                .ValueGeneratedOnUpdateSometimes()
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("Payload");
+
+                            b1.HasKey("JobId");
+
+                            b1.ToTable("Job", "scheduling");
+
+                            b1.WithOwner()
+                                .HasForeignKey("JobId");
+                        });
+
+                    b.OwnsOne("Scheduling.Domain.Domain.Jobs.ValueObjects.Payload", "Payload", b1 =>
+                        {
+                            b1.Property<long>("JobId")
+                                .HasColumnType("bigint");
+
+                            b1.Property<string>("Json")
+                                .IsRequired()
+                                .ValueGeneratedOnUpdateSometimes()
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("Payload");
+
+                            b1.HasKey("JobId");
+
+                            b1.ToTable("Job", "scheduling");
+
+                            b1.WithOwner()
+                                .HasForeignKey("JobId");
+                        });
+
+                    b.OwnsOne("Scheduling.Domain.Domain.Jobs.ValueObjects.SchedulerId", "SchedulerId", b1 =>
+                        {
+                            b1.Property<long>("JobId")
+                                .HasColumnType("bigint");
+
+                            b1.Property<long>("Value")
+                                .HasColumnType("bigint")
+                                .HasColumnName("SchedulerId");
+
+                            b1.HasKey("JobId");
+
+                            b1.ToTable("Job", "scheduling");
+
+                            b1.WithOwner()
+                                .HasForeignKey("JobId");
+                        });
+
+                    b.OwnsOne("Scheduling.Domain.Domain.Jobs.ValueObjects.StartedOn", "StartedOn", b1 =>
                         {
                             b1.Property<long>("JobId")
                                 .HasColumnType("bigint");
@@ -275,7 +330,7 @@ namespace Scheduling.Hangfire.Persistence.Migrations
                                 .HasForeignKey("JobId");
                         });
 
-                    b.OwnsOne("Scheduling.Hangfire.Domain.Jobs.ValueObjects.State", "State", b1 =>
+                    b.OwnsOne("Scheduling.Domain.Domain.Jobs.ValueObjects.State", "State", b1 =>
                         {
                             b1.Property<long>("JobId")
                                 .HasColumnType("bigint");
@@ -292,7 +347,7 @@ namespace Scheduling.Hangfire.Persistence.Migrations
                                 .HasForeignKey("JobId");
                         });
 
-                    b.OwnsOne("Scheduling.Hangfire.Domain.Jobs.ValueObjects.StoppedOn", "StoppedOn", b1 =>
+                    b.OwnsOne("Scheduling.Domain.Domain.Jobs.ValueObjects.StoppedOn", "StoppedOn", b1 =>
                         {
                             b1.Property<long>("JobId")
                                 .HasColumnType("bigint");
@@ -316,6 +371,14 @@ namespace Scheduling.Hangfire.Persistence.Migrations
 
                     b.Navigation("Name")
                         .IsRequired();
+
+                    b.Navigation("OutputList")
+                        .IsRequired();
+
+                    b.Navigation("Payload")
+                        .IsRequired();
+
+                    b.Navigation("SchedulerId");
 
                     b.Navigation("StartedOn");
 

@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Scheduling.Domain.Domain.JobItems;
 using Scheduling.Domain.Domain.Jobs;
 using System.Data;
 
@@ -30,10 +29,10 @@ namespace Scheduling.Infrastructure.Persistence.Persistence.Jobs.EntityConfigura
 					.IsRequired();
 			});
 
-			builder.OwnsOne(x => x.State, x =>
+			builder.OwnsOne(x => x.Payload, x =>
 			{
-				x.Property(e => e.JobState)
-					.HasColumnName(nameof(Job.State))
+				x.Property(e => e.Json)
+					.HasColumnName(nameof(Job.Payload))
 					.IsRequired();
 			});
 
@@ -41,6 +40,13 @@ namespace Scheduling.Infrastructure.Persistence.Persistence.Jobs.EntityConfigura
 			{
 				x.Property(e => e.JobState)
 					.HasColumnName(nameof(Job.State))
+					.IsRequired();
+			});
+
+			builder.OwnsOne(x => x.OutputList, x =>
+			{
+				x.Property(e => e.Json)
+					.HasColumnName(nameof(Job.Payload))
 					.IsRequired();
 			});
 
@@ -48,21 +54,27 @@ namespace Scheduling.Infrastructure.Persistence.Persistence.Jobs.EntityConfigura
 			{
 				x.Property(e => e.Value)
 					.HasColumnType("datetimeoffset")
-					.HasColumnName(nameof(JobItem.StartedOn));
+					.HasColumnName(nameof(Job.StartedOn));
 			});
 
 			builder.OwnsOne(x => x.StoppedOn, x =>
 			{
 				x.Property(e => e.Value)
 					.HasColumnType("datetimeoffset")
-					.HasColumnName(nameof(JobItem.StoppedOn));
+					.HasColumnName(nameof(Job.StoppedOn));
 			});
 
 			builder.OwnsOne(x => x.FinishedOn, x =>
 			{
 				x.Property(e => e.Value)
 					.HasColumnType("datetimeoffset")
-					.HasColumnName(nameof(JobItem.FinishedOn));
+					.HasColumnName(nameof(Job.FinishedOn));
+			});
+
+			builder.OwnsOne(x => x.SchedulerId, x =>
+			{
+				x.Property(e => e.Value)
+					.HasColumnName(nameof(Job.SchedulerId));
 			});
 
 			builder.ToTable(nameof(Job), "scheduling");

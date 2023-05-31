@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Scheduling.Hangfire.Persistence.Migrations
+namespace Scheduling.Infrastructure.Persistence.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration
@@ -22,10 +22,12 @@ namespace Scheduling.Hangfire.Persistence.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false),
                     JobType = table.Column<long>(type: "BigInt", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
+                    Payload = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     State = table.Column<int>(type: "int", nullable: false),
                     StartedOn = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
                     StoppedOn = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
-                    FinishedOn = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true)
+                    FinishedOn = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
+                    SchedulerId = table.Column<long>(type: "bigint", nullable: true)
                 },
                 constraints: table =>
                 {

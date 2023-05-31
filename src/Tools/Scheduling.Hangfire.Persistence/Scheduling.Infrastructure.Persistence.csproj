@@ -15,7 +15,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\Scheduling.Hangfire.Application\Scheduling.Application.csproj" />
+	  <ProjectReference Include="..\Scheduling.Hangfire.Application\Scheduling.Application.csproj" />
 	</ItemGroup>
 
 </Project>

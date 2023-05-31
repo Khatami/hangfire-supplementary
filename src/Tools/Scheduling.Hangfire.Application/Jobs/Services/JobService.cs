@@ -1,8 +1,9 @@
-﻿using Scheduling.Domain.Domain.Jobs;
+﻿using Scheduling.Application.Jobs.IServices;
+using Scheduling.Domain.Domain.Jobs;
 
 namespace Scheduling.Application.Jobs.Services
 {
-	public class JobService
+    public class JobService : IJobService
 	{
 		public async Task<Job> CreateJob()
 		{
