@@ -11,4 +11,8 @@
 		<PackageReference Include="Hangfire" Version="1.8.2" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\Scheduling.Hangfire.Application\Scheduling.Application.csproj" />
+	</ItemGroup>
+
 </Project>
