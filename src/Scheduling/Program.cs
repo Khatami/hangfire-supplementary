@@ -1,8 +1,10 @@
+using Scheduling.Application;
 using Scheduling.Infrastructure.Hangfire.Extensions;
 using Scheduling.Infrastructure.Persistence.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.RegisterApplicationServices();
 builder.Services.RegisterInfrastructureServices(builder.Configuration);
 builder.Services.AddHangfireScheduleServices(builder.Configuration.GetConnectionString("SqlServerConnectionString")!, "scheduling_hangfire");
 

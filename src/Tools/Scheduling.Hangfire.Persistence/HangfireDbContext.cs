@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Scheduling.Domain.Domain.JobItems;
 using Scheduling.Domain.Domain.Jobs;
-using Scheduling.Infrastructure.Persistence.Persistence.JobItems.EntityConfigurations;
-using Scheduling.Infrastructure.Persistence.Persistence.Jobs.EntityConfigurations;
+using Scheduling.Infrastructure.Persistence.JobItems.EntityConfigurations;
+using Scheduling.Infrastructure.Persistence.Jobs.EntityConfigurations;
 
 namespace Scheduling.Infrastructure.Persistence
 {

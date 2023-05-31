@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Scheduling.Domain.Domain.JobItems;
 using Scheduling.Domain.Domain.Jobs;
 using Scheduling.Infrastructure.Persistence.JobItems;
 using Scheduling.Infrastructure.Persistence.Jobs;

@@ -1,6 +1,7 @@
 ﻿using Hangfire;
 using Hangfire.SqlServer;
 using Microsoft.Extensions.DependencyInjection;
+using Scheduling.Application;
 
 namespace Scheduling.Infrastructure.Hangfire.Extensions;
 
@@ -25,5 +26,7 @@ public static class ServiceCollectionExtensions
 
 		// Add the processing server as IHostedService
 		services.AddHangfireServer();
+
+		services.AddScoped<ISchedulingService, SchedulingService>();
 	}
 }
