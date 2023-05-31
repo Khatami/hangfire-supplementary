@@ -4,14 +4,14 @@
 	{
 		private SchedulerId() { }
 
-		public SchedulerId(long? value)
+		public SchedulerId(string value)
 		{
-			if (value == null || value == default)
+			if (string.IsNullOrEmpty(value) == false)
 				throw new ArgumentNullException(nameof(value));
 
-			Value = value.Value;
+			Value = value;
 		}
 
-		public long Value { get; set; }
+		public string Value { get; set; }
 	}
 }

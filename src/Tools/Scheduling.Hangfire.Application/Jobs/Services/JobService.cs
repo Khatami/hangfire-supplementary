@@ -21,7 +21,7 @@ namespace Scheduling.Application.Jobs.Services
 			Expression<Action<T>> methodCall, 
 			string payload)
 		{
-			await _schedulingService.EnqueueAsync<T>(methodCall, jobTypeTitle);
+			string schedulerId = await _schedulingService.EnqueueAsync<T>(methodCall, jobTypeTitle);
 
 			return null!;
 		}

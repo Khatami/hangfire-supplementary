@@ -4,6 +4,6 @@ namespace Scheduling.Application
 {
 	public interface ISchedulingService
 	{
-		Task EnqueueAsync<T>(Expression<Action<T>> methodCall, string queueName);
+		Task<string> EnqueueAsync<T>(Expression<Action<T>> methodCall, string queueName);
 	}
 }
