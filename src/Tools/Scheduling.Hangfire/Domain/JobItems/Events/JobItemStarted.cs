@@ -1,4 +1,4 @@
-﻿namespace Scheduling.Hangfire.Domain.JobItems.Events
+﻿namespace Scheduling.Hangfire.Domain.Domain.JobItems.Events
 {
-    public record JobItemStarted(long Id, DateTimeOffset StartedOn);
+	public record JobItemStarted(long Id, DateTimeOffset StartedOn);
 }

@@ -8,7 +8,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Tools\Scheduling.Hangfire.Persistence\Scheduling.Hangfire.Persistence.csproj" />
-		<ProjectReference Include="..\Tools\Scheduling.Hangfire\Scheduling.Hangfire.csproj" />
+		<ProjectReference Include="..\Tools\Scheduling.Hangfire\Scheduling.Hangfire.Domain.csproj" />
 
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
 			<PrivateAssets>all</PrivateAssets>

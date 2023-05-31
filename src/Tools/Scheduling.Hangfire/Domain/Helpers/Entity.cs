@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography;
 
-namespace Scheduling.Hangfire.Domain.Helpers
+namespace Scheduling.Hangfire.Domain.Domain.Helpers
 {
 	public abstract class Entity<TId> : IInternalEventHandler
 	{

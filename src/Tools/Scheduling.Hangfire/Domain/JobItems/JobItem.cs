@@ -1,10 +1,10 @@
-﻿using Scheduling.Hangfire.Domain.Helpers;
-using Scheduling.Hangfire.Domain.JobItems.Enums;
-using Scheduling.Hangfire.Domain.JobItems.Events;
-using Scheduling.Hangfire.Domain.JobItems.Exceptions;
-using Scheduling.Hangfire.Domain.JobItems.ValueObjects;
+﻿using Scheduling.Hangfire.Domain.Domain.Helpers;
+using Scheduling.Hangfire.Domain.Domain.JobItems.Enums;
+using Scheduling.Hangfire.Domain.Domain.JobItems.Events;
+using Scheduling.Hangfire.Domain.Domain.JobItems.Exceptions;
+using Scheduling.Hangfire.Domain.Domain.JobItems.ValueObjects;
 
-namespace Scheduling.Hangfire.Domain.JobItems
+namespace Scheduling.Hangfire.Domain.Domain.JobItems
 {
 	// There is an important reason of defining JobItem as an aggregate root.
 	public class JobItem : AggregateRoot<long>
@@ -105,18 +105,18 @@ namespace Scheduling.Hangfire.Domain.JobItems
 
 		public JobId JobId { get; private set; }
 
-        public Payload Payload { get; private set; }
+		public Payload Payload { get; private set; }
 
-        public State State { get; private set; }
+		public State State { get; private set; }
 
-        public OutputList OutputList { get; private set; }
+		public OutputList OutputList { get; private set; }
 
-        public StartedOn? StartedOn { get; private set; }
+		public StartedOn? StartedOn { get; private set; }
 
 		public StoppedOn? StoppedOn { get; private set; }
 
 		public FinishedOn? FinishedOn { get; private set; }
 
-        public SchedulerId? SchedulerId { get; private set; }
-    }
+		public SchedulerId? SchedulerId { get; private set; }
+	}
 }

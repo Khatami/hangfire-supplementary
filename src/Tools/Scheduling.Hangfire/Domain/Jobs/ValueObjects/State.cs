@@ -1,6 +1,6 @@
-﻿using Scheduling.Hangfire.Domain.Jobs.Enums;
+﻿using Scheduling.Hangfire.Domain.Domain.Jobs.Enums;
 
-namespace Scheduling.Hangfire.Domain.Jobs.ValueObjects
+namespace Scheduling.Hangfire.Domain.Domain.Jobs.ValueObjects
 {
-    public record State(JobState JobState);
+	public record State(JobState JobState);
 }

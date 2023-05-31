@@ -1,11 +1,11 @@
-﻿namespace Scheduling.Hangfire.Domain.JobItems.Enums
+﻿namespace Scheduling.Hangfire.Domain.Domain.JobItems.Enums
 {
-    public enum JobItemState
-    {
-        Queued,
-        InProgress,
-        Stopped,
-        Success,
-        Failed
-    }
+	public enum JobItemState
+	{
+		Queued,
+		InProgress,
+		Stopped,
+		Success,
+		Failed
+	}
 }

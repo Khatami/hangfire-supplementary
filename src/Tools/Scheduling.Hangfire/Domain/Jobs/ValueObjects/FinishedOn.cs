@@ -1,4 +1,4 @@
-﻿namespace Scheduling.Hangfire.Domain.Jobs.ValueObjects
+﻿namespace Scheduling.Hangfire.Domain.Domain.Jobs.ValueObjects
 {
-    public record FinishedOn(DateTimeOffset Value);
+	public record FinishedOn(DateTimeOffset Value);
 }

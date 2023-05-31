@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Scheduling.Hangfire.Domain.JobItems;
-using Scheduling.Hangfire.Domain.Jobs;
+using Scheduling.Hangfire.Domain.Domain.JobItems;
+using Scheduling.Hangfire.Domain.Domain.Jobs;
 using Scheduling.Hangfire.Persistence.Persistence.JobItems.EntityConfigurations;
 using Scheduling.Hangfire.Persistence.Persistence.Jobs.EntityConfigurations;
 

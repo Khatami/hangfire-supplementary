@@ -1,4 +1,4 @@
-﻿namespace Scheduling.Hangfire.Domain.Helpers
+﻿namespace Scheduling.Hangfire.Domain.Domain.Helpers
 {
 	public interface IInternalEventHandler
 	{

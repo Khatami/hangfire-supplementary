@@ -1,5 +1,5 @@
 using Hangfire;
-using Scheduling.Hangfire.Extensions;
+using Scheduling.Hangfire.Domain.Extensions;
 using Scheduling.Hangfire.Persistence.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);

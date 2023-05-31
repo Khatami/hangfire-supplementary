@@ -1,4 +1,4 @@
-﻿namespace Scheduling.Hangfire.Domain.JobItems.ValueObjects
+﻿namespace Scheduling.Hangfire.Domain.Domain.JobItems.ValueObjects
 {
 	public record JobId
 	{

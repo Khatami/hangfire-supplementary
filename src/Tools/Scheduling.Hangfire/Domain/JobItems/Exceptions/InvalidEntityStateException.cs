@@ -1,4 +1,4 @@
-﻿namespace Scheduling.Hangfire.Domain.JobItems.Exceptions
+﻿namespace Scheduling.Hangfire.Domain.Domain.JobItems.Exceptions
 {
 	public class InvalidEntityStateException : Exception
 	{

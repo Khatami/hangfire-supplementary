@@ -2,7 +2,7 @@
 using Hangfire.SqlServer;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Scheduling.Hangfire.Extensions;
+namespace Scheduling.Hangfire.Domain.Extensions;
 
 public static class ServiceCollectionExtensions
 {
