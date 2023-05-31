@@ -5,9 +5,9 @@ namespace Scheduling.Application.Jobs.Services
 {
     public class JobService : IJobService
 	{
-		public async Task<Job> CreateJob()
+		public async Task<Job> CreateJob(long id, long jobType, string Name, string payload)
 		{
-			return null;
+			
 		}
 	}
 }

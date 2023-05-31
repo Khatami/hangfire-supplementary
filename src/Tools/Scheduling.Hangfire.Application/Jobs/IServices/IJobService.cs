@@ -4,6 +4,6 @@ namespace Scheduling.Application.Jobs.IServices
 {
     public interface IJobService
     {
-        Task<Job> CreateJob();
-    }
+		Task<Job> CreateJob(long id, long jobType, string Name, string payload);
+	}
 }

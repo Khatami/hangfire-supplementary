@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Scheduling.Infrastructure.Persistence;
+using Scheduling.Domain.Domain.Jobs;
+using Scheduling.Infrastructure.Persistence.JobItems;
+using Scheduling.Infrastructure.Persistence.Jobs;
 
 namespace Scheduling.Infrastructure.Persistence.Extensions
 {
@@ -12,6 +14,9 @@ namespace Scheduling.Infrastructure.Persistence.Extensions
 		{
 			services.AddDbContext<HangfireDbContext>(options =>
 				options.UseSqlServer(configuration.GetConnectionString("SqlServerConnectionString")));
+
+			services.AddScoped<IJobRepository, JobRepository>();
+			services.AddScoped<IJobItemRepository, JobItemRepository>();
 
 			return services;
 		}
