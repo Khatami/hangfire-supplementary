@@ -17,13 +17,13 @@ namespace Scheduling.Controllers
 		[HttpGet(nameof(RunJobs))]
 		public ActionResult RunJobs()
 		{
-			_jobService.CreateJobAsync<JobController>(12, 12, "BulkInsert", "Today.csv", q => q.Do(), null);
+			_jobService.CreateJobAsync<JobController>(12, 12, "BulkInsert", "Today.csv", q => q.Do(12), null);
 
 			return Ok();
 		}
 
 		[NonAction]
-		public void Do()
+		public void Do(long id)
 		{
 
 		}
