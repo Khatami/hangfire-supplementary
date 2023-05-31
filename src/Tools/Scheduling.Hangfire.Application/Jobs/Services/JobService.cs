@@ -2,7 +2,7 @@
 
 namespace Scheduling.Application.Jobs.Services
 {
-	public class CreateJobService
+	public class JobService : IJobService
 	{
 		public async Task<Job> CreateJob()
 		{
