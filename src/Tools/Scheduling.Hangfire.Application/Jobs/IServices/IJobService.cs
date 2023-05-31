@@ -1,10 +1,16 @@
-﻿using Scheduling.Domain.Domain.Jobs;
+﻿using Scheduling.Application.Jobs.Metadata;
+using Scheduling.Domain.Domain.Jobs;
 using System.Linq.Expressions;
 
 namespace Scheduling.Application.Jobs.IServices
 {
-    public interface IJobService
+	public interface IJobService
     {
-		Task<Job> CreateJobAsync(long id, long jobType, string jobTypeTitle, string Name, string payload, Expression<Action> methodCall);
+		Task<Job> CreateJobAsync<T>(long Id,
+			long JobType,
+			string JobTypeTitle,
+			string Name,
+			Expression<Action<T>> MethodCall,
+			string Payload);
 	}
 }

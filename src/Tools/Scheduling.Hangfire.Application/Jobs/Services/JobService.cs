@@ -1,10 +1,11 @@
 ﻿using Scheduling.Application.Jobs.IServices;
+using Scheduling.Application.Jobs.Metadata;
 using Scheduling.Domain.Domain.Jobs;
 using System.Linq.Expressions;
 
 namespace Scheduling.Application.Jobs.Services
 {
-    public class JobService : IJobService
+	public class JobService : IJobService
 	{
 		private ISchedulingService _schedulingService;
 
@@ -13,15 +14,14 @@ namespace Scheduling.Application.Jobs.Services
 			_schedulingService = schedulingService;
 		}
 
-		public async Task<Job> CreateJobAsync(
-			long id, 
+		public async Task<Job> CreateJobAsync<T>(long id, 
 			long jobType, 
 			string jobTypeTitle, 
-			string Name, 
-			string payload, 
-			Expression<Action> methodCall)
+			string name, 
+			Expression<Action<T>> methodCall, 
+			string payload)
 		{
-			await _schedulingService.EnqueueAsync(methodCall, jobTypeTitle);
+			await _schedulingService.EnqueueAsync<T>(methodCall, jobTypeTitle);
 
 			return null!;
 		}
