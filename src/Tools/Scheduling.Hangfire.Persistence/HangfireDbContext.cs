@@ -1,18 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Scheduling.Hangfire.Domain.Domain.JobItems;
-using Scheduling.Hangfire.Domain.Domain.Jobs;
-using Scheduling.Hangfire.Persistence.Persistence.JobItems.EntityConfigurations;
-using Scheduling.Hangfire.Persistence.Persistence.Jobs.EntityConfigurations;
+using Scheduling.Domain.Domain.JobItems;
+using Scheduling.Domain.Domain.Jobs;
+using Scheduling.Infrastructure.Persistence.Persistence.JobItems.EntityConfigurations;
+using Scheduling.Infrastructure.Persistence.Persistence.Jobs.EntityConfigurations;
 
-namespace Scheduling.Hangfire.Persistence
+namespace Scheduling.Infrastructure.Persistence
 {
 	public class HangfireDbContext : DbContext
 	{
-        public HangfireDbContext(DbContextOptions dbContextOptions) : base(dbContextOptions)
-		{         
-        }
+		public HangfireDbContext(DbContextOptions dbContextOptions) : base(dbContextOptions)
+		{
+		}
 
-        public DbSet<Job> Jobs { get; set; }
+		public DbSet<Job> Jobs { get; set; }
 
 		public DbSet<JobItem> JobItems { get; set; }
 

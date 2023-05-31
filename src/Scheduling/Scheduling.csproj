@@ -7,13 +7,17 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Tools\Scheduling.Hangfire.Persistence\Scheduling.Hangfire.Persistence.csproj" />
-		<ProjectReference Include="..\Tools\Scheduling.Hangfire\Scheduling.Hangfire.Domain.csproj" />
 
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Tools\Scheduling.Hangfire.Application\Scheduling.Application.csproj" />
+	  <ProjectReference Include="..\Tools\Scheduling.Hangfire.Persistence\Scheduling.Infrastructure.Persistence.csproj" />
+	  <ProjectReference Include="..\Tools\Scheduling.Infrastructure.Hangfire\Scheduling.Infrastructure.Hangfire.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -1,10 +1,10 @@
-﻿using Scheduling.Hangfire.Domain.Domain.Helpers;
-using Scheduling.Hangfire.Domain.Domain.Jobs.Enums;
-using Scheduling.Hangfire.Domain.Domain.Jobs.Events;
-using Scheduling.Hangfire.Domain.Domain.Jobs.Exceptions;
-using Scheduling.Hangfire.Domain.Domain.Jobs.ValueObjects;
+﻿using Scheduling.Domain.Domain.Helpers;
+using Scheduling.Domain.Domain.Jobs.Enums;
+using Scheduling.Domain.Domain.Jobs.Events;
+using Scheduling.Domain.Domain.Jobs.Exceptions;
+using Scheduling.Domain.Domain.Jobs.ValueObjects;
 
-namespace Scheduling.Hangfire.Domain.Domain.Jobs
+namespace Scheduling.Domain.Domain.Jobs
 {
 	public class Job : AggregateRoot<long>
 	{

@@ -1,4 +1,4 @@
-﻿namespace Scheduling.Hangfire.Domain.Domain.JobItems.Enums
+﻿namespace Scheduling.Domain.Domain.JobItems.Enums
 {
 	public enum JobItemState
 	{

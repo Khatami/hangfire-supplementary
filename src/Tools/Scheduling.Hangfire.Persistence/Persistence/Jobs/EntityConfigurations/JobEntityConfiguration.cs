@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Scheduling.Hangfire.Domain.Domain.JobItems;
-using Scheduling.Hangfire.Domain.Domain.Jobs;
+using Scheduling.Domain.Domain.JobItems;
+using Scheduling.Domain.Domain.Jobs;
 using System.Data;
 
-namespace Scheduling.Hangfire.Persistence.Persistence.Jobs.EntityConfigurations
+namespace Scheduling.Infrastructure.Persistence.Persistence.Jobs.EntityConfigurations
 {
 	public class JobEntityConfiguration : IEntityTypeConfiguration<Job>
 	{

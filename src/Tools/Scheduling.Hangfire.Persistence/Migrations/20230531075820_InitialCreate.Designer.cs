@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Scheduling.Hangfire.Persistence;
+using Scheduling.Infrastructure.Persistence;
 
 #nullable disable
 
 namespace Scheduling.Hangfire.Persistence.Migrations
 {
-    [DbContext(typeof(HangfireDbContext))]
+	[DbContext(typeof(HangfireDbContext))]
     [Migration("20230531075820_InitialCreate")]
     partial class InitialCreate
     {

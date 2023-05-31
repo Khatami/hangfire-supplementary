@@ -1,10 +1,10 @@
-﻿using Scheduling.Hangfire.Domain.Domain.Helpers;
-using Scheduling.Hangfire.Domain.Domain.JobItems.Enums;
-using Scheduling.Hangfire.Domain.Domain.JobItems.Events;
-using Scheduling.Hangfire.Domain.Domain.JobItems.Exceptions;
-using Scheduling.Hangfire.Domain.Domain.JobItems.ValueObjects;
+﻿using Scheduling.Domain.Domain.Helpers;
+using Scheduling.Domain.Domain.JobItems.Enums;
+using Scheduling.Domain.Domain.JobItems.Events;
+using Scheduling.Domain.Domain.JobItems.Exceptions;
+using Scheduling.Domain.Domain.JobItems.ValueObjects;
 
-namespace Scheduling.Hangfire.Domain.Domain.JobItems
+namespace Scheduling.Domain.Domain.JobItems
 {
 	// There is an important reason of defining JobItem as an aggregate root.
 	public class JobItem : AggregateRoot<long>

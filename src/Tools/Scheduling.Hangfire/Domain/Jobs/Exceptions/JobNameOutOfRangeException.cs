@@ -1,4 +1,4 @@
-﻿namespace Scheduling.Hangfire.Domain.Domain.Jobs.Exceptions
+﻿namespace Scheduling.Domain.Domain.Jobs.Exceptions
 {
 	public class JobNameOutOfRangeException : Exception
 	{

@@ -1,6 +1,6 @@
-﻿using Scheduling.Hangfire.Domain.Domain.Jobs.Exceptions;
+﻿using Scheduling.Domain.Domain.Jobs.Exceptions;
 
-namespace Scheduling.Hangfire.Domain.Domain.Jobs.ValueObjects
+namespace Scheduling.Domain.Domain.Jobs.ValueObjects
 {
 	public record Name
 	{

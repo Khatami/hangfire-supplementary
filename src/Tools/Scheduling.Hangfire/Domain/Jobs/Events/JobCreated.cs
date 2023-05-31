@@ -1,4 +1,4 @@
-﻿namespace Scheduling.Hangfire.Domain.Domain.Jobs.Events
+﻿namespace Scheduling.Domain.Domain.Jobs.Events
 {
 	public record JobCreated(long Id, string Name, long JobType);
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Scheduling.Hangfire.Domain.Domain.Jobs
+namespace Scheduling.Domain.Domain.Jobs
 {
 	internal interface IJobRepository
 	{

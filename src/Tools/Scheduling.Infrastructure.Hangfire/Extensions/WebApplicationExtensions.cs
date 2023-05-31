@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 
-namespace Scheduling.Hangfire.Domain.Extensions;
+namespace Scheduling.Infrastructure.Hangfire.Extensions;
 
 public static class WebApplicationExtensions
 {

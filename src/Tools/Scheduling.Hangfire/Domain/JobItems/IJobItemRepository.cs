@@ -1,4 +1,4 @@
-﻿namespace Scheduling.Hangfire.Domain.Domain.JobItems
+﻿namespace Scheduling.Domain.Domain.JobItems
 {
 	internal interface IJobItemRepository
 	{
