@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Scheduling.Hangfire.Domain.JobItems;
+using Scheduling.Hangfire.Domain.Jobs;
 using System.Data;
 
-namespace Scheduling.Hangfire.Persistence.JobItems.EntityConfigurations
+namespace Scheduling.Hangfire.Persistence.Persistence.JobItems.EntityConfigurations
 {
 	public class JobItemEntityConfiguration : IEntityTypeConfiguration<JobItem>
 	{
@@ -15,9 +16,14 @@ namespace Scheduling.Hangfire.Persistence.JobItems.EntityConfigurations
 
 			builder.OwnsOne(x => x.JobId, x =>
 			{
+				//x.HasOne(typeof(Job))
+				//	.WithMany()
+				//	.HasForeignKey(nameof(JobItem.JobId))
+				//	.OnDelete(DeleteBehavior.Cascade)
+				//	.IsRequired();
+
 				x.Property(e => e.Value)
 					.HasColumnName(nameof(JobItem.JobId))
-					.HasColumnType(SqlDbType.BigInt.ToString())
 					.IsRequired();
 			});
 
@@ -44,18 +50,21 @@ namespace Scheduling.Hangfire.Persistence.JobItems.EntityConfigurations
 			builder.OwnsOne(x => x.StartedOn, x =>
 			{
 				x.Property(e => e.Value)
+					.HasColumnType("datetimeoffset")
 					.HasColumnName(nameof(JobItem.StartedOn));
 			});
 
 			builder.OwnsOne(x => x.StoppedOn, x =>
 			{
 				x.Property(e => e.Value)
+					.HasColumnType("datetimeoffset")
 					.HasColumnName(nameof(JobItem.StoppedOn));
 			});
 
 			builder.OwnsOne(x => x.FinishedOn, x =>
 			{
 				x.Property(e => e.Value)
+					.HasColumnType("datetimeoffset")
 					.HasColumnName(nameof(JobItem.FinishedOn));
 			});
 
@@ -64,6 +73,8 @@ namespace Scheduling.Hangfire.Persistence.JobItems.EntityConfigurations
 				x.Property(e => e.Value)
 					.HasColumnName(nameof(JobItem.SchedulerId));
 			});
+
+			builder.ToTable(nameof(JobItem), "scheduling");
 		}
 	}
 }
