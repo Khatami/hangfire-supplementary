@@ -8,7 +8,6 @@ namespace Scheduling.Application.Jobs.IServices
     {
 		Task<Job> CreateJobAsync<T>(long Id,
 			long JobType,
-			string JobTypeTitle,
 			string Name,
 			Expression<Action<T>> MethodCall,
 			string Payload);

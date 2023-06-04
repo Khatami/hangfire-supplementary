@@ -17,7 +17,11 @@ namespace Scheduling.Controllers
 		[HttpGet(nameof(RunJobs))]
 		public ActionResult RunJobs()
 		{
-			_jobService.CreateJobAsync<JobController>(12, 12, "BulkInsert", "Today.csv", q => q.Do(12), null);
+			long jobId = 1;
+			string jobName = "For testing scheduling";
+			string payload = string.Empty;
+
+			_jobService.CreateJobAsync<JobController>(jobId, (int)JobType.BulkInsert, jobName, q => q.Do(12), payload);
 
 			return Ok();
 		}
@@ -27,5 +31,12 @@ namespace Scheduling.Controllers
 		{
 
 		}
+	}
+
+	public enum JobType
+	{ 
+		BulkInsert,
+		BulkUpdate,
+		BulkDelete
 	}
 }
